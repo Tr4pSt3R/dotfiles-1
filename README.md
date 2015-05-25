@@ -18,3 +18,10 @@ Launch vim, run `:NeoBundleInstall`
 Look
 [here](https://github.com/Shougo/neobundle.vim#2-install-configured-bundles) for
 other ways to install vim packages.
+
+## Install Git Completion
+To use these routines:
+
+   1) Copy this file(git-completition) to somewhere (e.g. ~/.git-completion.bash).
+   2) Add the following line to your .bashrc/.zshrc:
+       source ~/.git-completion.bash
