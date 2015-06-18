@@ -1,31 +1,30 @@
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
 [user]
-  name = Tomas D'Stefano
-  email = tomas_stefano@successoft.com
-[color]
-  branch = auto
-  diff   = auto
-  status = auto
-[color "branch"]
-  current = yellow reverse
-  local   = yellow
-  remote  = green
-[color "diff"]
-  meta = yellow bold
-  frag = magenta bold
-  old  = red bold
-  new  = green bold
-[color "status"]
-  added     = yellow
-  changed   = green
-  untracked = cyan
+	name = Jones Agyemang
+	email = mightyj@hotmail.co.uk
 [core]
-  excludesfile = /Users/tomas-stefano/.gitignore_global
-[branch]
-  autosetuprebase = always
+	excludesfile = /opt/boxen/config/git/gitignore
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+
+[hub]
+protocol = https
+
+[credential]
+helper = /opt/boxen/bin/boxen-git-credential
+
 [alias]
   ls      = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
   lds     = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
   st      = status -sb
   history = log -u --graph
-  div = divergence # Divergence (commits we added and commits remote added)
-
+	co = checkout
+	br = branch
+	ci = commit
